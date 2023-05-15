@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Subir Archivo a Servidor</title>
+  <style>
+    
+    
+    .drop-zone {
+      width:400px;
+      height:200px;
+  position: relative;
+  border: 2px solid #00ff00; /* Color del contorno */
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #473979; /* Color de fondo */
+  color:rgb(255, 255, 255);
+  text-align: center;
+  line-height: 200px;
+  font-size: 24px;
+}
+
+.drop-zone::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid #00ff00; /* Color del contorno */
+  border-radius: 10px;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.drop-zone::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 10px;
+  background-color: rgb(0, 255, 0); /* Color del efecto neon */
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.drop-zone:hover::after {
+  opacity: 1;
+}
+
+    
+  </style>
+</head>
+<body>
+    <h1>Perfil</h1>
+    <h2 id="nombre">
+
+    </h2>
+  <h3>Subir archivo al servidor</h3>
+
+
+  <form id="uploadForm" enctype="multipart/form-data">
+    <div id="dropZone" class="drop-zone">Arrastra el archivo aquí</div>
+  </form>
+  <br>
+  <div id="fileName"></div>
+  
+
+  <script type="text/javascript" src="dropzone.js"></script>
+  
+</body>
+</html>
+
+
